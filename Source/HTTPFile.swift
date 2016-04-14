@@ -59,7 +59,7 @@ extension Response {
 
             if let
                 fileExtension = file.fileExtension,
-                mediaType = mediaTypeForFileExtension(fileExtension) {
+                mediaType = mediaType(forFileExtension: fileExtension) {
                     self.contentType = mediaType
             }
 
