@@ -55,7 +55,7 @@ extension Response {
     public init(status: Status = .ok, headers: Headers = [:], filePath: String) {
         do {
             let file = try File(path: filePath, mode: .read)
-            self.init(status: status, headers: headers, body: file)
+            self.init(status: status, headers: headers, body: file.stream)
 
             if let
                 fileExtension = file.fileExtension,
